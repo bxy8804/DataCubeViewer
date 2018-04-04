@@ -11,8 +11,8 @@ parameters:
 datacube: (3d numpy array)
     The 3d data to be visualised.
 
-######Known bugs:
+###### Known bugs:
 None as of current version.
 
-######Improvements:
+###### Improvements:
 - [] Dynamic colorbar.
