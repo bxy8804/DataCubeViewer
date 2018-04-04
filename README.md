@@ -15,4 +15,4 @@ datacube: (3d numpy array)
 None as of current version.
 
 ###### Improvements:
-- [] Dynamic colorbar.
+- [ ] Dynamic colorbar.
