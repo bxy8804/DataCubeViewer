@@ -12,7 +12,7 @@ datacube: (3d numpy array)
     The 3d data to be visualised.
 
 ###### Known bugs:
-None as of current version.
+- [x] None as of current version.
 
 ###### Improvements:
 - [ ] Dynamic colorbar.
