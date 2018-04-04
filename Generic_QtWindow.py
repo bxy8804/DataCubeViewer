@@ -34,6 +34,8 @@ class MPLCanvas(FigureCanvasQTAgg):
         self.image = None
         # holder for line
         self.line = None
+        # holder for colorbar
+        self.cbar = None
 
         # initialise canvas
         FigureCanvasQTAgg.__init__(self, self.fig)
@@ -89,7 +91,6 @@ class MPLCanvas(FigureCanvasQTAgg):
     def update_image(self, image):
         ''''''
         self.image.set_array(image)
-        #print(self.image.get_array())
         self.ax.draw_artist(self.image)
         self.update()
 
