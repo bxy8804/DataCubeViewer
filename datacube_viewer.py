@@ -55,6 +55,9 @@ class DataCubeViewer:
         
         # plot first image
         self.rotationChanged()
+        # make and plot a colorbar on MPL canvas
+        self.aw.canvas.fig.colorbar(self.aw.canvas.image)
+        self.aw.canvas.update()
         self.slider_label.setText(str(self.slider_val))
         
         self.aw.show()
@@ -66,10 +69,7 @@ class DataCubeViewer:
         Updates the label and axes.'''
         self.slider_val = self.slider.value()
         self.slider_label.setText(str(self.slider_val))
-        #print(self.slider_val)
         self.aw.canvas.update_image(self.get_array_from_datacube())
-        #print(self.get_array_from_datacube())
-        
         
     def get_array_from_datacube(self):
         '''Selects the correct slice through the data cube to show
