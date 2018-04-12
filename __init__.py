@@ -1,1 +1,1 @@
-from .datacube_veiwer import DataCubeViwer
+from .datacube_viewer import DataCubeViewer

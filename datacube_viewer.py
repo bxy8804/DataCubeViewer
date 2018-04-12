@@ -6,7 +6,7 @@ Created on Mon Apr  2 14:41:14 2018
 @author: pjh523
 """
 
-from .Generic_QtWindow import QtWindowCanvas
+from .Generic_QtWindow import QtWindowCanvas, MPLCanvas
 
 from PyQt5.QtWidgets import (QApplication, QSlider, QLabel, QGridLayout,
                              QComboBox, QWidget)
@@ -31,13 +31,16 @@ class DataCubeViewer:
         self.datacube = datacube
         self.rotation_val = 0
         self.slider_val = 0
+
+        self.label = '_data'
+        # label for data in plot
         
         self.combobox_rotation = QComboBox()
         # 0, 1, and 2 are rotation axes
         self.combobox_rotation.addItems(('0', '1', '2'))
-        self.combobox_rotation.setCurrentIndex(self.rotation_val)
         self.combobox_rotation.currentIndexChanged.connect(self.rotationChanged)
-        
+        self.combobox_rotation.setCurrentIndex(self.rotation_val)
+ 
         self.aw.setWindowTitle('DataCube Viewer')
         
         # add slider and label to dock
@@ -56,7 +59,8 @@ class DataCubeViewer:
         # plot first image
         self.rotationChanged()
         # make and plot a colorbar on MPL canvas
-        self.aw.canvas.fig.colorbar(self.aw.canvas.image)
+        self.aw.canvas.fig.colorbar(MPLCanvas.get_image(self.aw.canvas.ax, \
+                                                        self.label))
         self.aw.canvas.update()
         self.slider_label.setText(str(self.slider_val))
         
@@ -69,7 +73,7 @@ class DataCubeViewer:
         Updates the label and axes.'''
         self.slider_val = self.slider.value()
         self.slider_label.setText(str(self.slider_val))
-        self.aw.canvas.update_image(self.get_array_from_datacube())
+        self.aw.canvas.update_image(self.get_array_from_datacube(), self.label)
         
     def get_array_from_datacube(self):
         '''Selects the correct slice through the data cube to show
@@ -97,5 +101,5 @@ class DataCubeViewer:
         self.slider.setMaximum(self.datacube.shape[2-self.rotation_val]-1)
         self.slider.setValue(0)
         self.slider_val = self.slider.value()
-        self.aw.canvas.plot_image(self.get_array_from_datacube())
+        self.aw.canvas.plot_image(self.get_array_from_datacube(), self.label)
         self.aw.canvas.update()
