@@ -6,7 +6,7 @@ Created on Wed May 30 21:01:24 2018
 @author: pjh523
 """
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(name='DataCubeViewer',
       version='0.1',
