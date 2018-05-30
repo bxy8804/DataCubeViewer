@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 30 21:01:24 2018
+
+@author: pjh523
+"""
+
+from distutils.core import setup
+
+setup(name='DataCubeViewer',
+      version='0.1',
+      description='An interactive GUI for viewing 3d data as slices in a stack.',
+      author='Patrick Harrison',
+      author_email='harriso.p.j@icloud.com',
+      url='https://github.com/paddyh087/DataCubeViewer',
+      license='MIT',
+      
+      install_requires=['PyQT5', 'numpy', 'matplotlib'],
+      
+      keywords='3D data visualization')
