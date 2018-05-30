@@ -16,6 +16,6 @@ setup(name='DataCubeViewer',
       url='https://github.com/paddyh087/DataCubeViewer',
       license='MIT',
       
-      install_requires=['PyQT5', 'numpy', 'matplotlib'],
+      install_requires=['PyQt5', 'numpy', 'matplotlib'],
       
       keywords='3D data visualization')
