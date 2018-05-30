@@ -9,7 +9,7 @@ Created on Wed May 30 21:01:24 2018
 from setuptools import setup
 
 setup(name='DataCubeViewer',
-      version='0.2',
+      version='0.21',
       description='An interactive GUI for viewing 3d data as slices in a stack.',
       author='Patrick Harrison',
       author_email='harriso.p.j@icloud.com',
