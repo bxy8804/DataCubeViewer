@@ -6,7 +6,7 @@ Created on Mon Apr  2 14:41:14 2018
 @author: pjh523
 """
 
-from Generic_QtWindow import QtWindowCanvas, MPLCanvas
+from .Generic_QtWindow import QtWindowCanvas, MPLCanvas
 
 from PyQt5.QtWidgets import (QApplication, QSlider, QLabel, QGridLayout,
                              QComboBox, QWidget, QLineEdit)
